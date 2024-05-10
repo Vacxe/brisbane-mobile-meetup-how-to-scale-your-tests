@@ -5,6 +5,13 @@ transition: fade
 paginate: true
 ---
 
+<style>
+img[alt~="center"] {
+  display: block;
+  margin: 0 auto;
+}
+</style>
+
 <!-- _class: lead -->
 
 # Mobile instrument tests: Reliability, Scale and Support
@@ -39,13 +46,14 @@ paginate: true
 ---
 
 
-# ![](https://icongr.am/material/comment-question-outline.svg?size=48&color=ff9900) Two possible ways
+# ![](https://icongr.am/material/comment-question-outline.svg?size=48&color=ff9900) Possible ways
 
-  * ![](https://icongr.am/fontawesome/cloud.svg?size=128&color=ff9900)  Run in Cloud
-  * ![](https://icongr.am/fontawesome/cogs.svg?size=128&color=ff9900)  Run on Prem
+  * ![](https://icongr.am/fontawesome/cloud.svg?size=64&color=ff9900)  Run in Cloud
+  * ![](https://icongr.am/fontawesome/cogs.svg?size=64&color=ff9900)  Run on Prem
+  * ![](https://icongr.am/fontawesome/cut.svg?size=64&color=ff9900)  Create subsets of tests *(PR / Nightly / Release)*
 ---
 
-# ![](https://icongr.am/fontawesome/cloud.svg?size=48&color=ff9900) Solution: Run in Cloud
+# ![](https://icongr.am/fontawesome/cloud.svg?size=48&color=ff9900) Run in Cloud
 
 |Pros|Cons|
 |---|---|
@@ -56,7 +64,7 @@ paginate: true
 
 ---
 
-# ![](https://icongr.am/fontawesome/cloud.svg?size=48&color=ff9900) Solution: Run in Cloud
+# ![](https://icongr.am/fontawesome/cloud.svg?size=48&color=ff9900) Run in Cloud
 
 Popular cloud platforms for UI tests
 * Firebase Lab
@@ -67,7 +75,7 @@ Popular cloud platforms for UI tests
 ---
 
 
-# ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Solution: Run on Prem
+# ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Run on Prem
 
 |Pros|Cons|
 |---|---|
@@ -79,13 +87,13 @@ Popular cloud platforms for UI tests
 
 # ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) UI Test execution tradeoffs
 
-"Fast, Cheap, Stable" Diagramm
+![w:600 center](images/cost_triangle.png)
   
 ---
 
 # ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Test runner: why we need it?
 
-"Fast, Cheap, Stable" Diagramm
+## Change **weights** between Speed, Quality and Cost parameters
   
 ---
 
@@ -109,6 +117,10 @@ Popular cloud platforms for UI tests
 
 # ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Marathon
 ###### *Cross-platform test runner*
+Supported plarforms:
+* Android
+* iOS
+* Flutter
 
 ---
 
