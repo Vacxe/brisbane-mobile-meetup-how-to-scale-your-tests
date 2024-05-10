@@ -5,6 +5,13 @@ transition: fade
 paginate: true
 ---
 
+<style>
+img[alt~="center"] {
+  display: block;
+  margin: 0 auto;
+}
+</style>
+
 <!-- _class: lead -->
 
 # Mobile instrument tests: Reliability, Scale and Support
@@ -39,13 +46,14 @@ paginate: true
 ---
 
 
-# ![](https://icongr.am/material/comment-question-outline.svg?size=48&color=ff9900) Two possible ways
+# ![](https://icongr.am/material/comment-question-outline.svg?size=48&color=ff9900) Possible ways
 
-  * ![](https://icongr.am/fontawesome/cloud.svg?size=128&color=ff9900)  Run in Cloud
-  * ![](https://icongr.am/fontawesome/cogs.svg?size=128&color=ff9900)  Run on Prem
+  * ![](https://icongr.am/fontawesome/cloud.svg?size=64&color=ff9900)  Run in Cloud
+  * ![](https://icongr.am/fontawesome/cogs.svg?size=64&color=ff9900)  Run on Prem
+  * ![](https://icongr.am/fontawesome/cut.svg?size=64&color=ff9900)  Create subsets of tests *(PR / Nightly / Release)*
 ---
 
-# ![](https://icongr.am/fontawesome/cloud.svg?size=48&color=ff9900) Solution: Run in Cloud
+# ![](https://icongr.am/fontawesome/cloud.svg?size=48&color=ff9900) Run in Cloud
 
 |Pros|Cons|
 |---|---|
@@ -56,7 +64,7 @@ paginate: true
 
 ---
 
-# ![](https://icongr.am/fontawesome/cloud.svg?size=48&color=ff9900) Solution: Run in Cloud
+# ![](https://icongr.am/fontawesome/cloud.svg?size=48&color=ff9900) Run in Cloud
 
 Popular cloud platforms for UI tests
 * Firebase Lab
@@ -67,7 +75,7 @@ Popular cloud platforms for UI tests
 ---
 
 
-# ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Solution: Run on Prem
+# ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Run on Prem
 
 |Pros|Cons|
 |---|---|
@@ -76,3 +84,55 @@ Popular cloud platforms for UI tests
 || :x: Specific set of skills (*Mobile DevOps*)|
   
 ---
+
+# ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) UI Test execution tradeoffs
+
+![w:600 center](images/cost_triangle.png)
+  
+---
+
+# ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Test runner: why we need it?
+
+## Change **weights** between Speed, Quality and Cost parameters
+  
+---
+
+# ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Test runner: core functionality
+
+* Stablity: Strategies for flakiness controll (retries)
+* Scalability: Run in parallel on multiple devices or agents
+
+  
+---
+
+# ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Test runner: extra functionality
+
+* Application management: Install/Reinstall Application
+* Filtering: Execute only preselected subset of tests
+* Batching: Combine tests in batches for performed execution
+* Resource management: Upload and download resources from device
+* Reporting: Well-looking execution reports
+  
+---
+
+# ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Marathon
+###### *Cross-platform test runner*
+Supported plarforms:
+* Android
+* iOS
+* Flutter
+
+---
+
+# ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Marathon: How to start
+
+Install CLI tooling
+
+*MacOS*
+```
+brew tap malinskiy/tap 
+brew install malinskiy/tap/marathon-cloud
+```
+
+*Linux*
+Install from Marathon Release binaries
