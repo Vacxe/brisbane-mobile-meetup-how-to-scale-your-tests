@@ -218,5 +218,65 @@ Marathon execution failed
 
 ---
 
-### ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Marathon file: Customize your strategy
+### ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Customize your strategy: Filtering
 
+
+* "fully-qualified-test-name"
+* "fully-qualified-class-name"
+* "simple-test-name"
+* "simple-class-name"
+* "package"
+* "method"
+* "annotation"
+
+---
+
+### ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Customize your strategy: Batching
+
+
+* Isolate batching
+* Fixed size batching
+```yaml
+batchingStrategy:
+  type: "fixed-size"
+  size: 5
+  durationMillis: 100000
+  percentile: 80.0
+  timeLimit: "-PT1H"
+  lastMileLength: 10
+```
+* Test class batching
+
+---
+
+### ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Customize your strategy: Retries
+
+
+* No Retries
+* Fixed quota retry strategy
+```yaml
+retryStrategy:
+  type: "fixed-quota"
+  totalAllowedRetryQuota: 100
+  retryPerTestQuota: 3
+```
+
+---
+
+### ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Customize your strategy: Dynamic configuration
+
+Marathonfile support environment variable interpolation in the Marathonfile
+
+```yaml
+filteringConfiguration:
+  allowlist:
+    - type: "fragmentation"
+      index: ${MARATHON_FRAGMENT_INDEX}
+      count: 10
+```
+
+and then execute the testing as following:
+
+```bash
+foo@bar:~$ MARATHON_FRAGMENT_INDEX=0 marathon
+```
