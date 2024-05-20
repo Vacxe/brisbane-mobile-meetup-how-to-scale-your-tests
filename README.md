@@ -45,12 +45,12 @@ img[alt~="center"] {
 
 ---
 
-
 ### ![](https://icongr.am/material/comment-question-outline.svg?size=48&color=ff9900) Possible ways
 
   * ![](https://icongr.am/fontawesome/cloud.svg?size=64&color=ff9900)  Run in Cloud
   * ![](https://icongr.am/fontawesome/cogs.svg?size=64&color=ff9900)  Run on Prem
   * ![](https://icongr.am/fontawesome/cut.svg?size=64&color=ff9900)  Create subsets of tests *(PR / Nightly / Release)*
+
 ---
 
 ### ![](https://icongr.am/fontawesome/cloud.svg?size=48&color=ff9900) Run in Cloud
@@ -74,7 +74,6 @@ Popular cloud platforms for UI tests
   
 ---
 
-
 ### ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Run on Prem
 
 |Pros|Cons|
@@ -94,7 +93,10 @@ Popular cloud platforms for UI tests
 ### ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Test runner: why we need it?
 
 ##### Change **weights** between Speed, Quality and Cost parameters
-  
+
+
+ ![w:400 center](https://icongr.am/material/scale-balance.svg?size=256&color=ff9900)
+
 ---
 
 ### ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Test runner: core functionality
@@ -102,7 +104,6 @@ Popular cloud platforms for UI tests
 * Stablity: Strategies for flakiness controll (retries)
 * Scalability: Run in parallel on multiple devices or agents
 
-  
 ---
 
 ### ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Test runner: extra functionality
@@ -120,16 +121,17 @@ Popular cloud platforms for UI tests
 Supported plarforms:
 * Android
 * iOS
-* Flutter
+* Flutter *(Cloud)*
+* Appium *(Cloud)*
 
 ---
 
-
-### ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Marathon (Android)
+### ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Marathon Overview
 
 ![w:600 center](images/marathon_struct.svg)
 
 ---
+
 ### ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Marathon: How to start
 
 Install CLI tooling
@@ -144,6 +146,7 @@ brew install malinskiy/tap/marathon-cloud
 Install from Marathon Release binaries
 
 ---
+
 ### ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Marathon: Quick Start (Android)
 
 ```yaml
@@ -157,6 +160,7 @@ vendorConfiguration:
 ```
 
 ---
+
 ### ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Marathon: Quick Start (IOS)
 
 ```yaml
@@ -171,6 +175,7 @@ vendorConfiguration:
 ```
 
 ---
+
 ### ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Marathon: Execute!
 ```bash
 foo@bar:~$ marathon
@@ -185,6 +190,7 @@ foo@bar:~$ marathon
 ```
 
 ---
+
 ### ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Marathon: Analyse the results
 ```bash
 foo@bar:~$ marathon
@@ -280,3 +286,6 @@ and then execute the testing as following:
 ```bash
 foo@bar:~$ MARATHON_FRAGMENT_INDEX=0 marathon
 ```
+
+---
+
