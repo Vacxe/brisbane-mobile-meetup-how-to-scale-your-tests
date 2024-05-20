@@ -289,4 +289,6 @@ foo@bar:~$ MARATHON_FRAGMENT_INDEX=0 marathon
 
 ---
 
-### ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Scale: Without test farm
+### ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Scale CI/CD: No test farm needed
+
+![w:900 center](images/marathon-scale-lazy.svg)
