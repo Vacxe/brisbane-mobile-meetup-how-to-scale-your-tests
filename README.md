@@ -289,3 +289,4 @@ foo@bar:~$ MARATHON_FRAGMENT_INDEX=0 marathon
 
 ---
 
+### ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Scale: Without test farm
