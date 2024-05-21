@@ -36,6 +36,15 @@ img[alt~="center"] {
 
 ---
 
+### ![](https://icongr.am/material/comment-question-outline.svg?size=48&color=ff9900) Why it can be flaky?
+* Emulator or Device hardware issues
+* Connectivity issues
+* Inconsistent responses from server
+* Side effects in tests
+* Many others...
+
+---
+
 ### ![](https://icongr.am/material/comment-question-outline.svg?size=48&color=ff9900) Storyline of UI tests in project
 
   * Team growing, you have about 20 developers for each platform, and about 1000 UI tests.
@@ -90,7 +99,7 @@ Popular cloud platforms for UI tests
   
 ---
 
-### ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Test runner: why we need it?
+### ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Test runner: Why we need it?
 
 ##### Change **weights** between Speed, Quality and Cost parameters
 
@@ -99,21 +108,28 @@ Popular cloud platforms for UI tests
 
 ---
 
-### ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Test runner: core functionality
+### ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Test runner: What is it?
 
-* Stablity: Strategies for flakiness controll (retries)
-* Scalability: Run in parallel on multiple devices or agents
+Definition: *Test Runnes is **state machine** what can **analyse output** from test execution*
 
 ---
 
-### ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Test runner: extra functionality
+### ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Test runner: Core functionality
 
-* Application management: Install/Reinstall Application
-* Filtering: Execute only preselected subset of tests
-* Batching: Combine tests in batches for performed execution
-* Resource management: Upload and download resources from device
-* Reporting: Well-looking execution reports
-  
+* **Stablity**: Strategies for flakiness controll (retries)
+* **Scalability**: Run in parallel on multiple devices or agents
+* **Application management**: Install/Reinstall Application
+* **Filtering**: Execute only preselected subset of tests
+* **Batching**: Combine tests in batches for performed execution
+* **Resource management**: Upload and download resources from device
+* **Reporting**: Well-looking execution reports  
+
+---
+
+<!-- _class: lead -->
+
+![w:900 center](images/marathon_oss.png)
+
 ---
 
 ### ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Marathon
@@ -271,7 +287,7 @@ retryStrategy:
 
 ### ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Customize your strategy: Dynamic configuration
 
-Marathonfile support environment variable interpolation in the Marathonfile
+Marathonfile support environment variable interpolation
 
 ```yaml
 filteringConfiguration:
@@ -292,3 +308,12 @@ foo@bar:~$ MARATHON_FRAGMENT_INDEX=0 marathon
 ### ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Scale CI/CD: No test farm needed
 
 ![w:900 center](images/marathon-scale-lazy.svg)
+
+---
+
+
+<!-- _class: lead -->
+
+![1 w:256 h:256](https://icongr.am/material/comment-question-outline.svg?color=ff9900)
+
+### Q/A
