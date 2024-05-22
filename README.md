@@ -14,7 +14,7 @@ img[alt~="center"] {
 
 <!-- _class: lead -->
 
-### Mobile instrument tests: Reliability, Scale and Support
+### Mobile instrumentation tests: Reliability, Scale and Support
 
 ###### Konstantin Aksenov
 
@@ -24,105 +24,106 @@ img[alt~="center"] {
 
 ![1 w:256 h:256](https://icongr.am/material/comment-question-outline.svg?color=ff9900)
 
-### Lets highlight the problem first
+### Let's highlight the problem first
 
 ---
 
 ### ![](https://icongr.am/material/comment-question-outline.svg?size=48&color=ff9900) Storyline of UI tests in project
 
-  * Your team (Probably QA) decided to move from **Manual** UI feature testing to **Instrumetal**
-  * After sometime you have about 100 UI tests in project, and from time to time **Local** execution is not consistent anymore (*few random UI tests failing for some unknown reasons*) but you sill ok with it (*rerun can help*)
-  * You decided to add new CI check for Pull Request automation and run UI tests for every change (*100 UI tests taking about 5 minutes for each run, but every 10% percent of runs failing because of flakiness*)
+- Your team (Probably QA) decides to move from **Manual** UI feature testing to **Instrumentation**
+- After some time you reach 100 UI tests in project, and from time to time **Local** execution is not consistent anymore (_few random UI tests failing for some unknown reasons_) but you are ok with it (_rerun can help_)
+- You decide to add a new CI check for Pull Request automation and run UI tests for every change (_100 UI tests taking about 5 minutes for each run, but every 10% percent of runs failing because of flakiness_)
 
 ---
 
-### ![](https://icongr.am/material/comment-question-outline.svg?size=48&color=ff9900) Why it can be flaky?
-* Emulator or Device hardware issues
-* Connectivity issues
-* Inconsistent responses from server
-* Side effects in tests
-* Many others...
+### ![](https://icongr.am/material/comment-question-outline.svg?size=48&color=ff9900) Why are test runs flaky?
+
+- Emulator or Device hardware issues
+- Connectivity issues
+- Inconsistent responses from server
+- Side effects in tests
+- Many others...
 
 ---
 
 ### ![](https://icongr.am/material/comment-question-outline.svg?size=48&color=ff9900) Storyline of UI tests in project
 
-  * Team growing, you have about 20 developers for each platform, and about 1000 UI tests.
-  * Now you not able to run UI tests for each Pull Request anymore, because almost each run fails (*Simple math: Success rate for each tests 0.998 ^ 1000 = **13% Success***).
-  * Developer complaining about execution time. Each run taking **more then one hour**
-  * You need to find solution...
+- Team grows, you have around 20 developers for each platform, and about 1000 UI tests.
+- Now you can't run UI tests for each Pull Request anymore, because almost each run fails (\*Simple math: Success rate for each tests 0.998 ^ 1000 = **13% Success\***).
+- Developer complains about execution time. Each run takes **more than one hour**
+- You need to find a solution...
 
 ---
 
-### ![](https://icongr.am/material/comment-question-outline.svg?size=48&color=ff9900) Possible ways
+### ![](https://icongr.am/material/comment-question-outline.svg?size=48&color=ff9900) Solutions
 
-  * ![](https://icongr.am/fontawesome/cloud.svg?size=64&color=ff9900)  Run in Cloud
-  * ![](https://icongr.am/fontawesome/cogs.svg?size=64&color=ff9900)  Run on Prem
-  * ![](https://icongr.am/fontawesome/cut.svg?size=64&color=ff9900)  Create subsets of tests *(PR / Nightly / Release)*
+- ![](https://icongr.am/fontawesome/cloud.svg?size=64&color=ff9900) Run in Cloud
+- ![](https://icongr.am/fontawesome/cogs.svg?size=64&color=ff9900) Run on Prem
+- ![](https://icongr.am/fontawesome/cut.svg?size=64&color=ff9900) Create subsets of tests _(PR / Nightly / Release)_
 
 ---
 
 ### ![](https://icongr.am/fontawesome/cloud.svg?size=48&color=ff9900) Run in Cloud
 
-|Pros|Cons|
-|---|---|
-|:white_check_mark: Easy for setup |:x: Flexibility|
-|:white_check_mark: Can be scaled |:x: You can pay too much|
-|:white_check_mark: Not required Maintenance ||
-|:white_check_mark: Different platforms support ||
+| Pros                                            | Cons                     |
+| ----------------------------------------------- | ------------------------ |
+| :white_check_mark: Easy to setup                | :x: Flexibility          |
+| :white_check_mark: Can be scaled                | :x: You can pay too much |
+| :white_check_mark: No maintenance required      |                          |
+| :white_check_mark: Supports different platforms |                          |
 
 ---
 
 ### ![](https://icongr.am/fontawesome/cloud.svg?size=48&color=ff9900) Run in Cloud
 
 Popular cloud platforms for UI tests
-* Firebase Lab
-* AppCenter
-* Perfecto
-* Marathon Cloud
-  
+
+- Firebase Test Lab
+- AppCenter
+- Perfecto
+- Marathon Cloud
+
 ---
 
 ### ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Run on Prem
 
-|Pros|Cons|
-|---|---|
-|:white_check_mark: Flexibility |:x: Extra work on environment setup|
-|:white_check_mark: Can be much cheaper then Cloud |:x: Maintenance|
-|| :x: Specific set of skills (*Mobile DevOps*)|
-  
+| Pros                                              | Cons                                         |
+| ------------------------------------------------- | -------------------------------------------- |
+| :white_check_mark: Flexibility                    | :x: Extra work on environment setup          |
+| :white_check_mark: Can be much cheaper than Cloud | :x: Maintenance                              |
+|                                                   | :x: Specific set of skills (_Mobile DevOps_) |
+
 ---
 
 ### ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) UI Test execution tradeoffs
 
 ![w:600 center](images/cost_triangle.png)
-  
+
 ---
 
 ### ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Test runner: Why we need it?
 
-##### Change **weights** between Speed, Quality and Cost parameters
+##### Change **balance** between Speed, Quality and Cost parameters
 
-
- ![w:400 center](https://icongr.am/material/scale-balance.svg?size=256&color=ff9900)
+![w:400 center](https://icongr.am/material/scale-balance.svg?size=256&color=ff9900)
 
 ---
 
 ### ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Test runner: What is it?
 
-Definition: *Test Runners is **state machine** what can **analyse output** from test execution*
+Definition: _Test Runner is a **state machine** that can **analyse output** from test execution_
 
 ---
 
 ### ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Test runner: Core functionality
 
-* **Stability**: Strategies for flakiness contrl (retries)
-* **Scalability**: Run in parallel on multiple devices or agents
-* **Application management**: Install/Reinstall Application
-* **Filtering**: Execute only preselected subset of tests
-* **Batching**: Combine tests in batches for performed execution
-* **Resource management**: Upload and download resources from device
-* **Reporting**: Well-looking execution reports  
+- **Stability**: Strategies for flakiness control (retries)
+- **Scalability**: Run in parallel on multiple devices or agents
+- **Application management**: Install/Reinstall Application
+- **Filtering**: Execute only preselected subset of tests
+- **Batching**: Combine tests in batches for performed execution
+- **Resource management**: Upload and download resources from device
+- **Reporting**: Good-looking execution reports
 
 ---
 
@@ -133,12 +134,15 @@ Definition: *Test Runners is **state machine** what can **analyse output** from 
 ---
 
 ### ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Marathon
-###### *Cross-platform test runner*
+
+###### _Cross-platform test runner_
+
 Supported platforms:
-* Android
-* iOS
-* Flutter *(Cloud)*
-* Appium *(Cloud)*
+
+- Android
+- iOS
+- Flutter _(Cloud)_
+- Appium _(Cloud)_
 
 ---
 
@@ -152,13 +156,14 @@ Supported platforms:
 
 Install CLI tooling
 
-*MacOS*
+_MacOS_
+
 ```
-brew tap malinskiy/tap 
+brew tap malinskiy/tap
 brew install malinskiy/tap/marathon-cloud
 ```
 
-*Linux*
+_Linux_
 Install from Marathon Release binaries
 
 ---
@@ -193,6 +198,7 @@ vendorConfiguration:
 ---
 
 ### ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Marathon: Execute!
+
 ```bash
 foo@bar:~$ marathon
 00% | [omni]-[127.0.0.1:5037:emulator-5554] com.example.AdbActivityTest#testUnsafeAccess started
@@ -208,6 +214,7 @@ foo@bar:~$ marathon
 ---
 
 ### ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Marathon: Analyse the results
+
 ```bash
 foo@bar:~$ marathon
 ...
@@ -231,33 +238,34 @@ Marathon execution failed
 ---
 
 ### ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Marathon reports
+
 ![w:1200 center](images/marathon_report.png)
 
 ---
 
 ### ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Marathon Allure reports
+
 ![w:1200 center](images/marathon_allure_report.png)
 
 ---
 
 ### ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Customize your strategy: Filtering
 
-
-* "fully-qualified-test-name"
-* "fully-qualified-class-name"
-* "simple-test-name"
-* "simple-class-name"
-* "package"
-* "method"
-* "annotation"
+- "fully-qualified-test-name"
+- "fully-qualified-class-name"
+- "simple-test-name"
+- "simple-class-name"
+- "package"
+- "method"
+- "annotation"
 
 ---
 
 ### ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Customize your strategy: Batching
 
+- Isolate batching
+- Fixed size batching
 
-* Isolate batching
-* Fixed size batching
 ```yaml
 batchingStrategy:
   type: "fixed-size"
@@ -267,15 +275,16 @@ batchingStrategy:
   timeLimit: "-PT1H"
   lastMileLength: 10
 ```
-* Test class batching
+
+- Test class batching
 
 ---
 
 ### ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Customize your strategy: Retries
 
+- No Retries
+- Fixed quota retry strategy
 
-* No Retries
-* Fixed quota retry strategy
 ```yaml
 retryStrategy:
   type: "fixed-quota"
@@ -310,7 +319,6 @@ foo@bar:~$ MARATHON_FRAGMENT_INDEX=0 marathon
 ![w:900 center](images/marathon-scale-lazy.svg)
 
 ---
-
 
 <!-- _class: lead -->
 
