@@ -320,6 +320,15 @@ foo@bar:~$ MARATHON_FRAGMENT_INDEX=0 marathon
 
 ---
 
+### ![](https://icongr.am/fontawesome/cogs.svg?size=48&color=ff9900) Conclusion
+
+- No magic with Test Runnes
+- Responsibilities: Frameworks for **Writing**, Runners for **Execution**
+- Select the most sutable way for your needs: Cloud or on Prem
+- Ask Mr. Anton Malinksky about Marathon Cloud ;)
+
+---
+
 <!-- _class: lead -->
 
 ![1 w:256 h:256](https://icongr.am/material/comment-question-outline.svg?color=ff9900)
